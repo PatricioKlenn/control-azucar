@@ -22,6 +22,13 @@ export default defineConfig({
       additionalLegacyPolyfills: ['regenerator-runtime/runtime']
     })
   ],
+  build: {
+    rollupOptions: {
+      external: [
+        "node_modules/firebaseui/dist/firebaseui.css",
+      ],
+    },
+  },
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
